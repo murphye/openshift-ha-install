@@ -14,7 +14,7 @@ env_id: "fastlane1"
 ## AWS Provisioning Variables
 # Amazon image name to use for instances.
 # Note that each AWS region may utilize a different AMI for the same image.
-aws_image_name: RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2
+aws_image_name: ami-6871a115
 
 # AWS instance flavors (i.e.: instance sizes)
 master_flavor: m4.xlarge
@@ -124,7 +124,7 @@ aws_termination_protection: yes
 
 # Should the cluster be configured for HA
 # - currently not supported
-ha_mode: false
+ha_mode: true
 
 # Subscription Management Details
 rhsm_register: True
@@ -133,11 +133,12 @@ rhsm_repos:
   - "rhel-7-server-ose-3.9-rpms"
   - "rhel-7-server-extras-rpms"
   - "rhel-7-fast-datapath-rpms"
+  - "rhel-7-server-ansible-2.4-rpms"
 
 # Keep this to use Red Hat Satellite:
-rhsm_server_hostname: 'sat-6.example.com'
-rhsm_org_id: 'CASL_ORG'
-rhsm_activationkey: 'casl-latest'
+#rhsm_server_hostname: 'sat-6.example.com'
+#rhsm_org_id: 'CASL_ORG'
+#rhsm_activationkey: 'casl-latest'
 
 # Uncomment the following to use RHSM username, password and optionally pool:
 #rhsm_username: ''
